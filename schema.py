@@ -18,7 +18,7 @@ def write_schema_yaml(csv_file):
 
     # Write schema to schema.yaml file
     ROOT_DIR=os.getcwd()
-    SCHEMA_PATH=os.path.join(ROOT_DIR,'config','schema.yaml')
+    SCHEMA_PATH=os.path.join(ROOT_DIR,'src/config','schema.yaml')
     
     
     with open(SCHEMA_PATH, "w") as file:
