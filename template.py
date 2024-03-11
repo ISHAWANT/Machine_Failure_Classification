@@ -13,7 +13,7 @@ list_of_files = [
     f"src/pipeline/__init__.py",
     f"src/utils/__init__.py",
     "setup.py",
-    "requiremennts.txt",
+    "requirements.txt",
     "schema.yaml",
     "demo.py",
     ".env"
