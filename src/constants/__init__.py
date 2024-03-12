@@ -10,7 +10,7 @@ SCHEMA_FILE_PATH=os.path.join(ROOT_DIR,CONFIG_DIR,SCHEMA_FILE)
 
 # Config File path
 ROOT_DIR=os.getcwd()
-CONFIG_DIR='src/config'
+CONFIG_DIR='config'
 SCHEMA_FILE='config.yaml'
 CONFIG_FILE_PATH=os.path.join(ROOT_DIR,CONFIG_DIR,SCHEMA_FILE)
 
@@ -24,3 +24,12 @@ DATA_INGESTION_INGESTED_DIR_NAME_KEY = "ingested_dir"
 DATA_INGESTION_TRAIN_DIR_KEY = "ingested_train_dir"
 DATA_INGESTION_TEST_DIR_KEY = "ingested_test_dir"
 CONFIG_FILE_KEY = "config"
+
+# Data Validation related variable
+DATA_VALIDATION_ARTIFACT_DIR="data_validation_dir"
+DATA_VALIDATION_CONFIG_KEY = "data_validation_config"
+DATA_VALIDATION_SCHEMA_FILE_NAME_KEY = "schema_file_name"
+DATA_VALIDATION_SCHEMA_DIR_KEY = "schema_dir"
+DATA_VALIDATION_VALID_DATASET ="validated_data"
+DATA_VALIDATION_TRAIN_FILE = "Train_data"
+DATA_VALIDATION_TEST_FILE ="Test_data"

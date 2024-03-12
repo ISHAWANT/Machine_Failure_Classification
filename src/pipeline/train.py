@@ -6,6 +6,7 @@ from multiprocessing import Process
 from src.entity.config_entity import * 
 from src.entity.artifact_entity import * 
 from src.components.data_ingestion import DataIngestion
+from src.components.data_validation import DataValidation
 
 
 class Pipeline():
@@ -26,11 +27,20 @@ class Pipeline():
         except Exception as e:
             raise ApplicationException(e, sys) from e
         
+    def start_data_validation(self, data_ingestion_artifact:DataIngestionArtifact)-> DataValidationArtifact:
+        try:
+            data_validation = DataValidation(data_validation_config=DataValidationConfig(self.training_pipeline_config),
+                                             data_ingestion_artifact=data_ingestion_artifact)
+            return data_validation.initiate_data_validation()
+        except Exception as e:
+            raise ApplicationException(e, sys) from e
+        
     
     def run_pipeline(self):
         try:
              #data ingestion
             data_ingestion_artifact = self.start_data_ingestion()
+            data_validation_artifact=self.start_data_validation(data_ingestion_artifact=data_ingestion_artifact)
 
         except Exception as e:
             raise ApplicationException(e,sys) from e 
