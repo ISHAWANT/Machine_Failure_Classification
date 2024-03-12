@@ -1,0 +1,18 @@
+training_pipeline_config:
+  pipeline_name: Artifact
+  artifact_dir: artifact
+
+data_ingestion_config:
+  data_base: Machine_Failure
+  collection_name: Data
+  data_ingestion: data_ingestion
+  raw_data_dir: raw_data
+  ingested_dir: ingested_Data
+  ingested_train_dir: Train
+  ingested_test_dir: Test
+
+data_validation_config:
+  data_validation_dir: data_validation
+  validated_data: validated_data
+  Train_data: Train
+  Test_data: Test

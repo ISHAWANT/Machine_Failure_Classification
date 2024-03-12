@@ -1,0 +1,19 @@
+ColumnNames:
+  Air temperature [K]: float64
+  HDF: int64
+  Machine failure: int64
+  OSF: int64
+  PWF: int64
+  Process temperature [K]: float64
+  Product ID: object
+  RNF: int64
+  Rotational speed [rpm]: int64
+  TWF: int64
+  Tool wear [min]: int64
+  Torque [Nm]: float64
+  Type: object
+  id: int64
+
+  
+FileName: data.csv
+NumberOfColumns: 14
