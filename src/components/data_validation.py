@@ -10,13 +10,11 @@ import shutil
 from src.constants import *
 import pandas as pd
 
-
-
 class DataValidation:
     def __init__(self,data_validation_config:DataValidationConfig,
                  data_ingestion_artifact:DataIngestionArtifact) -> None:
         try:
-            logging.info(f"{'>>' * 30}Data Validation log started.{'<<' * 30} \n\n") 
+            logging.info(f"{'>>' * 10}Data Validation log started.{'<<' * 10} \n\n") 
             
             # Creating_instance           
             self.data_validation_config = data_validation_config
@@ -24,8 +22,7 @@ class DataValidation:
             
             # Schema_file_path
             self.schema_path = self.data_validation_config.schema_file_path
-            
-            
+        
             # creating instance for row_data_validation
             self.train_data = IngestedDataValidation(
                                 validate_path=self.data_ingestion_artifact.train_file_path, schema_path=self.schema_path)
@@ -39,17 +36,12 @@ class DataValidation:
             # Data_validation_config --> file paths to save validated_data
             self.validated_train_path = self.data_validation_config.validated_train_path
             self.validated_test_path =self.data_validation_config.validated_test_path
-            
-        
         except Exception as e:
             raise ApplicationException(e,sys) from e
 
-
     def isFolderPathAvailable(self) -> bool:
         try:
-
             # check is the train and test file exists (Unvalidated file)
-             
             isfolder_available = False
             train_path = self.train_path
             test_path = self.test_path
@@ -60,15 +52,12 @@ class DataValidation:
         except Exception as e:
             raise ApplicationException(e, sys) from e     
       
-
-
-        
     def is_Validation_successfull(self):
         try:
             validation_status = True
             logging.info("Validation Process Started")
             if self.isFolderPathAvailable() == True:
-                
+
                 # Train file 
                 train_filename = os.path.basename(
                     self.data_ingestion_artifact.train_file_path)
@@ -81,10 +70,8 @@ class DataValidation:
 
                 is_train_missing_values_whole_column = self.train_data.missing_values_whole_column()
                 
-                
                 self.train_data.replace_null_values_with_nan()
 
-                
                 # Test File 
                 test_filename = os.path.basename(
                     self.data_ingestion_artifact.test_file_path)
@@ -95,14 +82,9 @@ class DataValidation:
                 is_test_column_name_same = self.test_data.check_column_names()
                 validating_test_data_types=self.test_data.validate_data_types(filepath=self.test_path
                                                                                )
-
                 is_test_missing_values_whole_column = self.test_data.missing_values_whole_column()
 
                 self.test_data.replace_null_values_with_nan()
-                
-                
-                
-
                 
                 logging.info(
                     f"Train_set status: "
@@ -129,8 +111,7 @@ class DataValidation:
                     
                     # Log the export of the validated train dataset
                     logging.info(f"Exported validated train dataset to file: [{self.validated_train_path}]")
-                                     
-                                     
+                                   
                 if is_test_filename_validated  & is_test_column_name_same & is_test_missing_values_whole_column & validating_test_data_types :
                                           
                     ## Exporting test.csv file
@@ -143,8 +124,7 @@ class DataValidation:
                     
                     # Log the export of the validated train dataset
                     logging.info(f"Exported validated train dataset to file: [{self.validated_test_path}]")
-                                        
-                    
+
                     return validation_status,self.validated_train_path,self.validated_test_path
                 else:
                     validation_status = False
@@ -152,18 +132,14 @@ class DataValidation:
                     raise ValueError(
                         "Check your Training data! Validation failed")
                 
-
             return validation_status,"NONE","NONE"
         except Exception as e:
             raise ApplicationException(e, sys) from e      
-        
 
     def initiate_data_validation(self):
         try:
-            
             # Data Validation
             is_validated, validated_train_path, validated_test_path = self.is_Validation_successfull()
-            
             
             data_validation_artifact = DataValidationArtifact(
                 validated_train_path=validated_train_path,
@@ -175,6 +151,5 @@ class DataValidation:
         except Exception as e:
             raise ApplicationException(e, sys) from e
 
-
     def __del__(self):
-        logging.info(f"{'>>' * 30}Data Validation log completed.{'<<' * 30}")
+        logging.info(f"{'>>' * 10}Data Validation log completed.{'<<' * 10}")
