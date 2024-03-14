@@ -88,6 +88,22 @@ class ModelTrainingConfig:
     except Exception as e:
         raise ApplicationException(e,sys) from e 
     
+
+class ModelEvalConfig:
+    try:
     
+        def __init__(self,training_pipeline_config:TrainingPipelineConfig):
+            
+            
+            model_eval_config_key=config_data[MODEL_EVAL_CONFIG_KEY]        
+            
+            self.model_eval_directory=os.path.join(training_pipeline_config.artifact_dir ,model_eval_config_key[MODEL_EVALUATION_DIRECTORY])
+            self.model_eval_report=os.path.join(self.model_eval_directory,model_eval_config_key[MODEL_REPORT])
+
+    except Exception as e:
+        raise ApplicationException(e,sys) from e 
+    
+
+        
         
     

@@ -21,4 +21,9 @@ class ModelTrainerArtifact:
     trained_model_file_path:str
     model_artifact_report:str
 
-    
+@dataclass
+class ModelEvaluationArtifact:
+    model_name:str
+    Auc_Score:float
+    selected_model_path:str
+    model_report_path:str  
