@@ -1,0 +1,42 @@
+categorical_columns:
+- Product ID
+- Type
+
+drop_columns:
+- id
+- Product ID
+
+new_features:
+- Temperature_ratio
+- Torque * Rotational_speed
+- Torque * Tool wear
+- Torque * Rotational_speed
+
+numerical_columns:
+- id
+- Air temperature [K]
+- Process temperature [K]
+- Rotational speed [rpm]
+- Torque [Nm]
+- Tool wear [min]
+
+boolean_columns:
+- TWF
+- HDF
+- PWF
+- OSF
+- RNF
+
+scaling_columns:
+- Air_temperature_K 
+- Process_temperature_K
+- Rotational_speed_rpm 
+- Torque_Nm
+- Tool_wear_min
+- Temperature_ratio
+- Torque * Rotational_speed
+- Torque * Tool wear
+
+target_column:
+- Machine_failure
+
