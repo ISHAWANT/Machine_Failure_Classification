@@ -62,3 +62,9 @@ MODEL_TRAINING_CONFIG_KEY='model_trainer_config'
 MODEL_TRAINER_ARTIFACT_DIR = "model_training"
 MODEL_TRAINER_OBJECT = "model_object"
 MODEL_REPORT_FILE="model_report"
+
+
+# model evaluation 
+MODEL_EVAL_CONFIG_KEY='model_eval_config'
+MODEL_EVALUATION_DIRECTORY='model_eval_dir'
+MODEL_REPORT='model_eval_report'
