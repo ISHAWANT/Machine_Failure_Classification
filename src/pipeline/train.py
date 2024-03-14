@@ -8,6 +8,7 @@ from src.entity.artifact_entity import *
 from src.components.data_ingestion import DataIngestion
 from src.components.data_validation import DataValidation
 from src.components.data_transformation import DataTransformation
+from src.components.model_trainer import ModelTrainer
 
 
 
@@ -47,6 +48,17 @@ class Pipeline():
         except Exception as e:
             raise ApplicationException(e,sys) from e
         
+    def start_model_training(self,data_transformation_artifact: DataTransformationArtifact) -> ModelTrainerArtifact:
+        try:
+            model_trainer = ModelTrainer(model_trainer_config=ModelTrainingConfig(self.training_pipeline_config),
+                                        data_transformation_artifact=data_transformation_artifact)   
+            
+            logging.info("Model Trainer intiated")
+
+            return model_trainer.initiate_model_training()
+        except Exception as e:
+            raise ApplicationException(e,sys) from e
+        
     
     def run_pipeline(self):
         try:
@@ -54,6 +66,8 @@ class Pipeline():
             data_ingestion_artifact = self.start_data_ingestion()
             data_validation_artifact=self.start_data_validation(data_ingestion_artifact=data_ingestion_artifact)
             data_transformation_artifact = self.start_data_transformation(data_validation_artifact=data_validation_artifact)
+            model_trainer_artifact = self.start_model_training(data_transformation_artifact=data_transformation_artifact)
+
 
         except Exception as e:
             raise ApplicationException(e,sys) from e 

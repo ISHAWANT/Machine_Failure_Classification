@@ -160,3 +160,4 @@ cython_debug/
 #.idea/
 artifact/*
 prediction_files/*
+catboost_info/*
