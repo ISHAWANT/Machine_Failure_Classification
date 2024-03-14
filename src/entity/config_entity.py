@@ -73,4 +73,21 @@ class DataTransformationConfig:
     except Exception as e:
         raise ApplicationException(e,sys) from e 
     
+
+class ModelTrainingConfig:
+
+    try:
+        def __init__(self,training_pipeline_config:TrainingPipelineConfig):
+        
+            model_training_key=config_data[MODEL_TRAINING_CONFIG_KEY]
+
+            
+            self.model_training_dir = os.path.join(training_pipeline_config.artifact_dir ,model_training_key[MODEL_TRAINER_ARTIFACT_DIR])
+            self.model_object_file_path = os.path.join(self.model_training_dir,model_training_key[MODEL_TRAINER_OBJECT])
+            self.model_report =  os.path.join(self.model_training_dir,model_training_key[MODEL_REPORT_FILE])
+    except Exception as e:
+        raise ApplicationException(e,sys) from e 
+    
+    
+        
     
