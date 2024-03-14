@@ -56,3 +56,9 @@ DATA_TRANSFORMATION_PREPROCESSING_DIR_KEY = "preprocessing_dir"
 DATA_TRANSFORMATION_PREPROCESSING_FILE_NAME_KEY = "preprocessed_object_file_name"
 DATA_TRANSFORMATION_FEA_ENG_FILE_NAME_KEY='feature_eng_file'
 PIKLE_FOLDER_NAME_KEY = "prediction_files"
+
+# Model Training 
+MODEL_TRAINING_CONFIG_KEY='model_trainer_config'
+MODEL_TRAINER_ARTIFACT_DIR = "model_training"
+MODEL_TRAINER_OBJECT = "model_object"
+MODEL_REPORT_FILE="model_report"
