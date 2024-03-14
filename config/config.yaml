@@ -25,3 +25,8 @@ data_transformation_config:
   preprocessing_dir: preprocessed
   preprocessed_object_file_name: preprocessed.pkl
   feature_eng_file: fea_eng.pkl
+
+model_trainer_config:
+  model_training: model_training 
+  model_object: model.pkl
+  model_report: report.yaml
