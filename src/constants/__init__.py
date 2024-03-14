@@ -68,3 +68,9 @@ MODEL_REPORT_FILE="model_report"
 MODEL_EVAL_CONFIG_KEY='model_eval_config'
 MODEL_EVALUATION_DIRECTORY='model_eval_dir'
 MODEL_REPORT='model_eval_report'
+
+# Saved Model 
+SAVED_MODEL_CONFIG_KEY='saved_model_config'
+SAVED_MODEL_DIR='directory'
+SAVED_MODEL_OBJECT='model_object'
+SAVED_MODEL_REPORT='report'
