@@ -20,3 +20,5 @@ class DataTransformationArtifact:
 class ModelTrainerArtifact:
     trained_model_file_path:str
     model_artifact_report:str
+
+    
