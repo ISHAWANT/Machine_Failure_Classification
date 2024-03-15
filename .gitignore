@@ -161,3 +161,4 @@ cython_debug/
 artifact/*
 prediction_files/*
 catboost_info/*
+Saved_model/*
