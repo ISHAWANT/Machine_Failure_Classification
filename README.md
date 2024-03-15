@@ -37,10 +37,15 @@ In addition to these, there are other failure modes captured in the dataset:
 
 ### Methodology : 
 Data Ingestion 
+
 Data Validation
+
 Data Transformation
+
 Model Training
+
 Model Evaluation 
+
 Model Pusher
 
 ### Project Setup
