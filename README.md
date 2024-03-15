@@ -7,7 +7,7 @@ The goal of the Machine Failure Prediction project is to precisely forecast a ma
 ### About Dataset: 
 A variety of sensor readings and situations that are critical to predicting machine failure are included in the dataset for this competition. A machine learning model that was first trained on machine failure predictions produces the training and test datasets. Though the feature distributions are comparable, it's crucial to remember that they differ from the original data. This raises the competition's level of difficulty and complexity.
 
-Download dataset from here: [link](https://www.kaggle.com/competitions/playground-series-s3e17/overview)
+Download dataset from here: [Dataset](https://www.kaggle.com/competitions/playground-series-s3e17/overview)
 
 The following features are included in the dataset:
 
