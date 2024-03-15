@@ -1,4 +1,4 @@
-#### Machine Failure Classification Project
+# Machine Failure Classification Project
 
 ### About Project:
 
