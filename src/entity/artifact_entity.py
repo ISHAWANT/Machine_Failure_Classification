@@ -27,3 +27,7 @@ class ModelEvaluationArtifact:
     Auc_Score:float
     selected_model_path:str
     model_report_path:str  
+
+@dataclass
+class ModelPusherArtifact:
+    message:str

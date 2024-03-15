@@ -103,6 +103,19 @@ class ModelEvalConfig:
     except Exception as e:
         raise ApplicationException(e,sys) from e 
     
+class SavedModelConfig:
+    try:
+
+        def __init__(self):
+            saved_model_config_key=config_data[SAVED_MODEL_CONFIG_KEY]
+            
+            ROOT_DIR=os.getcwd()
+            self.saved_model_dir=os.path.join(ROOT_DIR,saved_model_config_key[SAVED_MODEL_DIR])
+            self.saved_model_file_path=os.path.join(self.saved_model_dir,saved_model_config_key[SAVED_MODEL_OBJECT])
+            self.saved_model_report_path=os.path.join(self.saved_model_dir,saved_model_config_key[SAVED_MODEL_REPORT])
+
+    except Exception as e:
+        raise ApplicationException(e,sys)  from e 
 
         
         
