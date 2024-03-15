@@ -36,6 +36,7 @@ In addition to these, there are other failure modes captured in the dataset:
 - RNF: Random failure. This indicates whether the machine failed due to a random, unspecified issue.
 
 ### Methodology : 
+```
 Data Ingestion 
 
 Data Validation
@@ -47,7 +48,7 @@ Model Training
 Model Evaluation 
 
 Model Pusher
-
+```
 ### Project Setup
 Create a conda eviroment
 ```
